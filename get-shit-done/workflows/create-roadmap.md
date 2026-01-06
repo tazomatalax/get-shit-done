@@ -45,7 +45,7 @@ ls ~/.github/skills/expertise/ 2>/dev/null
 | "MIDI", "sequencer", "music app"         | expertise/midi           |
 | "ISF", "shader", "GLSL", "visual effect" | expertise/isf-shaders    |
 | "UI", "design", "frontend", "Tailwind"   | expertise/ui-design      |
-| "Agent SDK", "Claude SDK", "agentic"     | expertise/with-agent-sdk |
+| "Agent SDK", "Anthropic SDK", "agentic"     | expertise/with-agent-sdk |
 
 **If domain inferred:**
 

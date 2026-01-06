@@ -97,7 +97,7 @@ function install(isGlobal) {
   const agentsDir = path.join(copilotDir, 'agents');
   fs.mkdirSync(agentsDir, { recursive: true });
 
-  // Copy commands/gsd with path replacement
+  // Copy agents/gsd with path replacement
   const gsdSrc = path.join(src, 'commands', 'gsd');
   const gsdDest = path.join(agentsDir, 'gsd');
   copyWithPathReplacement(gsdSrc, gsdDest, pathPrefix);
