@@ -85,7 +85,7 @@ Start with: [specific first action when resuming]
 </next_action>
 ```
 
-Be specific enough for a fresh Claude to understand immediately.
+Be specific enough for a fresh the agent to understand immediately.
 </step>
 
 <step name="commit">

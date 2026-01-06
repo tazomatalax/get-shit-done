@@ -25,7 +25,7 @@ ${cyan}   ██████╗ ███████╗██████╗
 
   Get Shit Done ${dim}v${pkg.version}${reset}
   A meta-prompting, context engineering and spec-driven
-  development system for Claude Code by TÂCHES.
+  development system for GitHub Copilot by TÂCHES.
 `;
 
 // Parse args
@@ -60,9 +60,9 @@ function copyWithPathReplacement(srcDir, destDir, pathPrefix) {
     if (entry.isDirectory()) {
       copyWithPathReplacement(srcPath, destPath, pathPrefix);
     } else if (entry.name.endsWith('.md')) {
-      // Replace ~/.claude/ with the appropriate prefix in markdown files
+      // Replace ~/.github/ with the appropriate prefix in markdown files
       let content = fs.readFileSync(srcPath, 'utf8');
-      content = content.replace(/~\/\.claude\//g, pathPrefix);
+      content = content.replace(/~\/\.github\//g, pathPrefix);
       fs.writeFileSync(destPath, content);
     } else {
       fs.copyFileSync(srcPath, destPath);
@@ -75,37 +75,37 @@ function copyWithPathReplacement(srcDir, destDir, pathPrefix) {
  */
 function install(isGlobal) {
   const src = path.join(__dirname, '..');
-  const configDir = expandTilde(process.env.CLAUDE_CONFIG_DIR);
-  const defaultGlobalDir = configDir || path.join(os.homedir(), '.claude');
-  const claudeDir = isGlobal
+  const configDir = expandTilde(process.env.COPILOT_CONFIG_DIR);
+  const defaultGlobalDir = configDir || path.join(os.homedir(), '.github');
+  const copilotDir = isGlobal
     ? defaultGlobalDir
-    : path.join(process.cwd(), '.claude');
+    : path.join(process.cwd(), '.github');
 
   const locationLabel = isGlobal
-    ? claudeDir.replace(os.homedir(), '~')
-    : claudeDir.replace(process.cwd(), '.');
+    ? copilotDir.replace(os.homedir(), '~')
+    : copilotDir.replace(process.cwd(), '.');
 
   // Path prefix for file references
-  // Use actual path when CLAUDE_CONFIG_DIR is set, otherwise use ~ shorthand
+  // Use actual path when COPILOT_CONFIG_DIR is set, otherwise use ~ shorthand
   const pathPrefix = isGlobal
-    ? (configDir ? `${claudeDir}/` : '~/.claude/')
-    : './.claude/';
+    ? (configDir ? `${copilotDir}/` : '~/.github/')
+    : './.github/';
 
   console.log(`  Installing to ${cyan}${locationLabel}${reset}\n`);
 
-  // Create commands directory
-  const commandsDir = path.join(claudeDir, 'commands');
-  fs.mkdirSync(commandsDir, { recursive: true });
+  // Create agents directory
+  const agentsDir = path.join(copilotDir, 'agents');
+  fs.mkdirSync(agentsDir, { recursive: true });
 
   // Copy commands/gsd with path replacement
   const gsdSrc = path.join(src, 'commands', 'gsd');
-  const gsdDest = path.join(commandsDir, 'gsd');
+  const gsdDest = path.join(agentsDir, 'gsd');
   copyWithPathReplacement(gsdSrc, gsdDest, pathPrefix);
-  console.log(`  ${green}✓${reset} Installed commands/gsd`);
+  console.log(`  ${green}✓${reset} Installed agents/gsd`);
 
   // Copy get-shit-done skill with path replacement
   const skillSrc = path.join(src, 'get-shit-done');
-  const skillDest = path.join(claudeDir, 'get-shit-done');
+  const skillDest = path.join(copilotDir, 'get-shit-done');
   copyWithPathReplacement(skillSrc, skillDest, pathPrefix);
   console.log(`  ${green}✓${reset} Installed get-shit-done`);
 
@@ -123,13 +123,13 @@ function promptLocation() {
     output: process.stdout
   });
 
-  const globalPath = expandTilde(process.env.CLAUDE_CONFIG_DIR) || path.join(os.homedir(), '.claude');
+  const globalPath = expandTilde(process.env.COPILOT_CONFIG_DIR) || path.join(os.homedir(), '.github');
   const globalLabel = globalPath.replace(os.homedir(), '~');
 
   console.log(`  ${yellow}Where would you like to install?${reset}
 
   ${cyan}1${reset}) Global ${dim}(${globalLabel})${reset} - available in all projects
-  ${cyan}2${reset}) Local  ${dim}(./.claude)${reset} - this project only
+  ${cyan}2${reset}) Local  ${dim}(./.github)${reset} - this project only
 `);
 
   rl.question(`  Choice ${dim}[1]${reset}: `, (answer) => {

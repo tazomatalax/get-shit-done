@@ -15,9 +15,9 @@ Roadmaps define what work happens in what order. Run after /gsd:new-project.
 </objective>
 
 <execution_context>
-@~/.claude/get-shit-done/workflows/create-roadmap.md
-@~/.claude/get-shit-done/templates/roadmap.md
-@~/.claude/get-shit-done/templates/state.md
+@~/.github/get-shit-done/workflows/create-roadmap.md
+@~/.github/get-shit-done/templates/roadmap.md
+@~/.github/get-shit-done/templates/state.md
 </execution_context>
 
 <context>

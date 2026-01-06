@@ -1,7 +1,7 @@
 {
   "name": "get-shit-done-cc",
   "version": "1.3.26",
-  "description": "A meta-prompting, context engineering and spec-driven development system for Claude Code by TÂCHES.",
+  "description": "A meta-prompting, context engineering and spec-driven development system for GitHub Copilot by TÂCHES.",
   "bin": {
     "get-shit-done-cc": "bin/install.js"
   },
@@ -11,8 +11,8 @@
     "get-shit-done"
   ],
   "keywords": [
-    "claude",
-    "claude-code",
+    "github-copilot",
+    "copilot",
     "ai",
     "meta-prompting",
     "context-engineering",

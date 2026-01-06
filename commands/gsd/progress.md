@@ -98,7 +98,7 @@ Check if `{phase}-{plan}-PLAN.md` exists for that number.
 
 - Read its `<objective>` section
 - Show: "Ready to execute: [path] - [objective summary]"
-- Display (see ~/.claude/get-shit-done/references/continuation-format.md):
+- Display (see ~/.github/get-shit-done/references/continuation-format.md):
   ```
   ---
 
@@ -156,7 +156,7 @@ Check if `{phase}-{plan}-PLAN.md` exists for that number.
   **Also available:**
   - `/gsd:discuss-phase [phase]` — gather context first
   - `/gsd:research-phase [phase]` — investigate unknowns
-  - `/gsd:list-phase-assumptions [phase]` — see Claude's assumptions
+  - `/gsd:list-phase-assumptions [phase]` — see the agent's assumptions
 
   ---
   ```

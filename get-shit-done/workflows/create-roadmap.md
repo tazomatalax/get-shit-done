@@ -6,8 +6,8 @@ that delivers value. The roadmap provides structure, not detailed tasks.
 <required_reading>
 **Read these files NOW:**
 
-1. ~/.claude/get-shit-done/templates/roadmap.md
-2. ~/.claude/get-shit-done/templates/state.md
+1. ~/.github/get-shit-done/templates/roadmap.md
+2. ~/.github/get-shit-done/templates/state.md
 3. Read `.planning/PROJECT.md` if it exists
    </required_reading>
 
@@ -32,7 +32,7 @@ If proceeding without brief, gather quick context:
 Scan for available domain expertise:
 
 ```bash
-ls ~/.claude/skills/expertise/ 2>/dev/null
+ls ~/.github/skills/expertise/ 2>/dev/null
 ```
 
 **Inference:** Based on the brief/user request, infer applicable domains:
@@ -290,7 +290,7 @@ mkdir -p .planning/phases
 </step>
 
 <step name="write_roadmap">
-Use template from `~/.claude/get-shit-done/templates/roadmap.md`.
+Use template from `~/.github/get-shit-done/templates/roadmap.md`.
 
 Initial roadmaps use integer phases (1, 2, 3...).
 Decimal phases added later via /gsd:insert-phase command (if it exists).
@@ -319,7 +319,7 @@ mkdir -p .planning/phases/02-{phase-name}
 
 Create STATE.md — the project's living memory.
 
-Use template from `~/.claude/get-shit-done/templates/state.md`.
+Use template from `~/.github/get-shit-done/templates/state.md`.
 
 Write to `.planning/STATE.md`:
 
@@ -386,7 +386,7 @@ Resume file: None
 **Key points:**
 
 - Project Reference points to PROJECT.md for full context
-- Claude reads PROJECT.md directly for requirements, constraints, decisions
+- the agent reads PROJECT.md directly for requirements, constraints, decisions
 - This file will be read first in every future operation
 - This file will be updated after every execution
 
