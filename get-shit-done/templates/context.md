@@ -137,10 +137,10 @@ The user is the visionary. They know:
 - References to things they like
 
 The user does NOT know (and shouldn't be asked):
-- Codebase patterns (the agent reads the code)
-- Technical risks (the agent identifies during research)
-- Implementation constraints (the agent figures out)
-- Success metrics (the agent infers from the work)
+- Codebase patterns (Claude reads the code)
+- Technical risks (Claude identifies during research)
+- Implementation constraints (Claude figures out)
+- Success metrics (Claude infers from the work)
 
 **Content should read like:**
 - A founder describing their product vision

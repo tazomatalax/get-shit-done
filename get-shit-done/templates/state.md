@@ -121,7 +121,7 @@ Points to PROJECT.md for full context. Includes:
 - Current focus (which phase)
 - Last update date (triggers re-read if stale)
 
-the agent reads PROJECT.md directly for requirements, constraints, and decisions.
+Claude reads PROJECT.md directly for requirements, constraints, and decisions.
 
 ### Current Position
 Where we are right now:

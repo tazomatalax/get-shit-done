@@ -12,8 +12,8 @@ Output: {phase}-CONTEXT.md capturing the user's vision for the phase
 </objective>
 
 <execution_context>
-@~/.github/get-shit-done/workflows/discuss-phase.md
-@~/.github/get-shit-done/templates/context.md
+@~/.claude/get-shit-done/workflows/discuss-phase.md
+@~/.claude/get-shit-done/templates/context.md
 </execution_context>
 
 <context>

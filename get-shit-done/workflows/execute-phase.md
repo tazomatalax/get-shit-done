@@ -720,7 +720,7 @@ Proceed with proposed change? (yes / different approach / defer)
 
 **Process:**
 
-1. Create .planning/ISSUES.md if doesn't exist (use `~/.github/get-shit-done/templates/issues.md`)
+1. Create .planning/ISSUES.md if doesn't exist (use `~/.claude/get-shit-done/templates/issues.md`)
 2. Add entry with ISS-XXX number (auto-increment)
 3. Brief notification: `📋 Logged enhancement: [brief] (ISS-XXX)`
 4. Continue task without implementing
@@ -869,7 +869,7 @@ After TDD plan completion, ensure:
 - Standard plans: Multiple tasks, 1 commit per task, 2-4 commits total
 - TDD plans: Single feature, 2-3 commits for RED/GREEN/REFACTOR cycle
 
-See `~/.github/get-shit-done/references/tdd.md` for TDD plan structure.
+See `~/.claude/get-shit-done/references/tdd.md` for TDD plan structure.
 </tdd_plan_execution>
 
 <task_commit>
@@ -960,7 +960,7 @@ TASK_COMMITS+=("Task ${TASK_NUM}: ${TASK_COMMIT}")
 - Each task independently revertable
 - Git bisect finds exact failing task
 - Git blame traces line to specific task context
-- Clear history for the agent in future sessions
+- Clear history for Claude in future sessions
 - Better observability for AI-automated workflow
 
 </task_commit>
@@ -968,7 +968,7 @@ TASK_COMMITS+=("Task ${TASK_NUM}: ${TASK_COMMIT}")
 <step name="checkpoint_protocol">
 When encountering `type="checkpoint:*"`:
 
-**Critical: the agent automates everything with CLI/API before checkpoints.** Checkpoints are for verification and decisions, not manual work.
+**Critical: Claude automates everything with CLI/API before checkpoints.** Checkpoints are for verification and decisions, not manual work.
 
 **Display checkpoint clearly:**
 
@@ -1020,7 +1020,7 @@ Options:
 **For checkpoint:human-action (1% - rare, only for truly unavoidable manual steps):**
 
 ```
-I automated: [what the agent already did via CLI/API]
+I automated: [what Claude already did via CLI/API]
 
 Need your help with: [the ONE thing with no CLI/API - email link, 2FA code]
 
@@ -1040,7 +1040,7 @@ I'll verify after: [verification]
 - If verification passes or N/A: continue to next task
 - If verification fails: inform user, wait for resolution
 
-See ~/.github/get-shit-done/references/checkpoints.md for complete checkpoint guidance.
+See ~/.claude/get-shit-done/references/checkpoints.md for complete checkpoint guidance.
 </step>
 
 <step name="verification_failure_gate">
@@ -1089,7 +1089,7 @@ Pass timing data to SUMMARY.md creation.
 
 <step name="create_summary">
 Create `{phase}-{plan}-SUMMARY.md` as specified in the prompt's `<output>` section.
-Use ~/.github/get-shit-done/templates/summary.md for structure.
+Use ~/.claude/get-shit-done/templates/summary.md for structure.
 
 **File location:** `.planning/phases/XX-name/{phase}-{plan}-SUMMARY.md`
 
@@ -1353,7 +1353,7 @@ lmn012o feat(08-02): create user registration endpoint
 
 Each task has its own commit, followed by one metadata commit documenting plan completion.
 
-For commit message conventions, see ~/.github/get-shit-done/references/git-integration.md
+For commit message conventions, see ~/.claude/get-shit-done/references/git-integration.md
 </step>
 
 <step name="update_codebase_map">

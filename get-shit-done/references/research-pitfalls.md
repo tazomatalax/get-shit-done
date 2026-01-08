@@ -58,13 +58,13 @@ Search queries (use WebSearch):
 
 <pitfall_tool_variations>
 **What**: Conflating capabilities across different tools/environments
-**Example**: "Copilot Chat supports X" ≠ "Copilot Workspace supports X"
+**Example**: "Claude Desktop supports X" ≠ "Claude Code supports X"
 **Why it happens**: Not explicitly checking each environment separately
 **Prevention**:
 ```xml
 <verification_checklist>
-□ Copilot Chat capabilities
-□ Copilot Workspace capabilities
+□ Claude Desktop capabilities
+□ Claude Code capabilities
 □ VS Code extension capabilities
 □ API/SDK capabilities
 Document which environment supports which features

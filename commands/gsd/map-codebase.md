@@ -19,14 +19,14 @@ Output: .planning/codebase/ folder with 7 structured documents about the codebas
 </objective>
 
 <execution_context>
-@~/.github/get-shit-done/workflows/map-codebase.md
-@~/.github/get-shit-done/templates/codebase/stack.md
-@~/.github/get-shit-done/templates/codebase/architecture.md
-@~/.github/get-shit-done/templates/codebase/structure.md
-@~/.github/get-shit-done/templates/codebase/conventions.md
-@~/.github/get-shit-done/templates/codebase/testing.md
-@~/.github/get-shit-done/templates/codebase/integrations.md
-@~/.github/get-shit-done/templates/codebase/concerns.md
+@~/.claude/get-shit-done/workflows/map-codebase.md
+@~/.claude/get-shit-done/templates/codebase/stack.md
+@~/.claude/get-shit-done/templates/codebase/architecture.md
+@~/.claude/get-shit-done/templates/codebase/structure.md
+@~/.claude/get-shit-done/templates/codebase/conventions.md
+@~/.claude/get-shit-done/templates/codebase/testing.md
+@~/.claude/get-shit-done/templates/codebase/integrations.md
+@~/.claude/get-shit-done/templates/codebase/concerns.md
 </execution_context>
 
 <context>

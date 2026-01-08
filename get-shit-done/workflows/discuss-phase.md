@@ -5,7 +5,7 @@ You are a thinking partner, not an interviewer. The user is the visionary — yo
 </purpose>
 
 <philosophy>
-**User = founder/visionary. the agent = builder.**
+**User = founder/visionary. Claude = builder.**
 
 The user doesn't know (and shouldn't need to know):
 - Codebase patterns (you read the code)
@@ -157,7 +157,7 @@ Loop until "Create CONTEXT.md" selected.
 <step name="write_context">
 Create CONTEXT.md capturing the user's vision.
 
-Use template from ~/.github/get-shit-done/templates/context.md
+Use template from ~/.claude/get-shit-done/templates/context.md
 
 **File location:** `.planning/phases/${PHASE}-${SLUG}/${PHASE}-CONTEXT.md`
 

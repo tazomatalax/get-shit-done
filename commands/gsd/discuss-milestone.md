@@ -10,7 +10,7 @@ Output: Context gathered, then routes to /gsd:new-milestone
 </objective>
 
 <execution_context>
-@~/.github/get-shit-done/workflows/discuss-milestone.md
+@~/.claude/get-shit-done/workflows/discuss-milestone.md
 </execution_context>
 
 <context>

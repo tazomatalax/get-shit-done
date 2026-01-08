@@ -1,21 +1,21 @@
 <overview>
 Plans execute autonomously. Checkpoints formalize interaction points where human verification or decisions are needed.
 
-**Core principle:** the agent automates everything with CLI/API. Checkpoints are for verification and decisions, not manual work.
+**Core principle:** Claude automates everything with CLI/API. Checkpoints are for verification and decisions, not manual work.
 </overview>
 
 <checkpoint_types>
 
 ## checkpoint:human-verify (90% of checkpoints)
 
-**When:** the agent completed automated work, human confirms it works correctly.
+**When:** Claude completed automated work, human confirms it works correctly.
 
 **Use for:** Visual UI checks, interactive flows, functional verification, audio/video quality, animation smoothness, accessibility testing.
 
 **Structure:**
 ```xml
 <task type="checkpoint:human-verify" gate="blocking">
-  <what-built>[What the agent automated]</what-built>
+  <what-built>[What Claude automated]</what-built>
   <how-to-verify>[Numbered steps - URLs, commands, expected behavior]</how-to-verify>
   <resume-signal>[How to continue - "approved" or describe issues]</resume-signal>
 </task>
@@ -86,8 +86,8 @@ Plans execute autonomously. Checkpoints formalize interaction points where human
 ```xml
 <task type="checkpoint:human-action" gate="blocking">
   <action>[Unavoidable manual step]</action>
-  <instructions>[What the agent automated] [ONE thing requiring human action]</instructions>
-  <verification>[What the agent checks afterward]</verification>
+  <instructions>[What Claude automated] [ONE thing requiring human action]</instructions>
+  <verification>[What Claude checks afterward]</verification>
   <resume-signal>[How to continue]</resume-signal>
 </task>
 ```
@@ -109,7 +109,7 @@ Plans execute autonomously. Checkpoints formalize interaction points where human
 
 <execution_protocol>
 
-When the agent encounters `type="checkpoint:*"`:
+When Claude encounters `type="checkpoint:*"`:
 
 1. **Stop immediately** - do not proceed to next task
 2. **Display checkpoint clearly:**
@@ -135,9 +135,9 @@ Task [X] of [Y]: [Name]
 
 <authentication_gates>
 
-**Critical:** When the agent tries CLI/API and gets auth error, this is NOT a failure - it's a gate requiring human input to unblock automation.
+**Critical:** When Claude tries CLI/API and gets auth error, this is NOT a failure - it's a gate requiring human input to unblock automation.
 
-**Pattern:** the agent tries automation → auth error → creates checkpoint → you authenticate → the agent retries → continues
+**Pattern:** Claude tries automation → auth error → creates checkpoint → you authenticate → Claude retries → continues
 
 **Gate protocol:**
 1. Recognize it's not a failure - missing auth is expected
@@ -150,7 +150,7 @@ Task [X] of [Y]: [Name]
 
 **Example (Vercel auth gate):**
 ```xml
-<!-- the agent tries to deploy -->
+<!-- Claude tries to deploy -->
 <task type="auto">
   <name>Deploy to Vercel</name>
   <action>Run `vercel --yes` to deploy</action>
@@ -167,7 +167,7 @@ Task [X] of [Y]: [Name]
   <resume-signal>Type "done" when authenticated</resume-signal>
 </task>
 
-<!-- After auth, the agent retries automatically -->
+<!-- After auth, Claude retries automatically -->
 <task type="auto">
   <name>Retry deployment</name>
   <action>Run `vercel --yes` (now authenticated)</action>
@@ -175,14 +175,14 @@ Task [X] of [Y]: [Name]
 ```
 
 **Key distinction:**
-- Pre-planned checkpoint: "I need you to do X" (wrong - the agent should automate)
+- Pre-planned checkpoint: "I need you to do X" (wrong - Claude should automate)
 - Auth gate: "I tried to automate X but need credentials" (correct - unblocks automation)
 
 </authentication_gates>
 
 <automation_reference>
 
-**The rule:** If it has CLI/API, the agent does it. Never ask human to perform automatable work.
+**The rule:** If it has CLI/API, Claude does it. Never ask human to perform automatable work.
 
 | Service | CLI/API | Key Commands | Auth Gate |
 |---------|---------|--------------|-----------|
@@ -201,7 +201,7 @@ Task [X] of [Y]: [Name]
 
 **Quick reference:**
 
-| Action | Automatable? | the agent does it? |
+| Action | Automatable? | Claude does it? |
 |--------|--------------|-----------------|
 | Deploy to Vercel | Yes (`vercel`) | YES |
 | Create Stripe webhook | Yes (API) | YES |
@@ -223,7 +223,7 @@ Task [X] of [Y]: [Name]
 - Make verification executable
 
 **DON'T:**
-- Ask human to do work the agent can automate
+- Ask human to do work Claude can automate
 - Assume knowledge: "Configure the usual settings"
 - Mix multiple verifications in one checkpoint
 - Use checkpoints too frequently (verification fatigue)
@@ -256,7 +256,7 @@ Why bad: Vercel has CLI. Use `vercel --yes`.
 ```
 Why bad: Verification fatigue. Combine into one checkpoint at end.
 
-**GOOD: the agent automates, human verifies once**
+**GOOD: Claude automates, human verifies once**
 ```xml
 <task type="auto">Create schema</task>
 <task type="auto">Create API</task>
@@ -272,16 +272,16 @@ Why bad: Verification fatigue. Combine into one checkpoint at end.
 
 <summary>
 
-**The golden rule:** If the agent CAN automate it, the agent MUST automate it.
+**The golden rule:** If Claude CAN automate it, Claude MUST automate it.
 
 **Checkpoint priority:**
-1. **checkpoint:human-verify** (90%) - the agent automated, human confirms visual/functional correctness
+1. **checkpoint:human-verify** (90%) - Claude automated, human confirms visual/functional correctness
 2. **checkpoint:decision** (9%) - Human makes architectural/technology choices
 3. **checkpoint:human-action** (1%) - Truly unavoidable manual steps with no API/CLI
 
 **When NOT to use checkpoints:**
-- Things the agent can verify programmatically (tests, builds)
-- File operations (the agent can read/write)
+- Things Claude can verify programmatically (tests, builds)
+- File operations (Claude can read/write)
 - Anything with CLI/API available
 
 </summary>

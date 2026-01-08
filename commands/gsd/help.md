@@ -16,7 +16,7 @@ Output ONLY the reference content below. Do NOT add:
 <reference>
 # GSD Command Reference
 
-**GSD** (Get Shit Done) creates hierarchical project plans optimized for solo agentic development with GitHub Copilot.
+**GSD** (Get Shit Done) creates hierarchical project plans optimized for solo agentic development with Claude Code.
 
 ## Quick Start
 
@@ -84,10 +84,10 @@ Comprehensive ecosystem research for niche/complex domains.
 Usage: `/gsd:research-phase 3`
 
 **`/gsd:list-phase-assumptions <number>`**
-See what the agent is planning to do before it starts.
+See what Claude is planning to do before it starts.
 
-- Shows the agent's intended approach for a phase
-- Lets you course-correct if the agent misunderstood your vision
+- Shows Claude's intended approach for a phase
+- Lets you course-correct if Claude misunderstood your vision
 - No files created - conversational output only
 
 Usage: `/gsd:list-phase-assumptions 3`

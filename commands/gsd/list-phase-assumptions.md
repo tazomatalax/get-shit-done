@@ -1,5 +1,5 @@
 ---
-description: Surface the agent's assumptions about a phase approach before planning
+description: Surface Claude's assumptions about a phase approach before planning
 argument-hint: "[phase]"
 allowed-tools:
   - Read
@@ -9,14 +9,14 @@ allowed-tools:
 ---
 
 <objective>
-Analyze a phase and present the agent's assumptions about technical approach, implementation order, scope boundaries, risk areas, and dependencies.
+Analyze a phase and present Claude's assumptions about technical approach, implementation order, scope boundaries, risk areas, and dependencies.
 
-Purpose: Help users see what the agent thinks BEFORE planning begins - enabling course correction early when assumptions are wrong.
+Purpose: Help users see what Claude thinks BEFORE planning begins - enabling course correction early when assumptions are wrong.
 Output: Conversational output only (no file creation) - ends with "What do you think?" prompt
 </objective>
 
 <execution_context>
-@~/.github/get-shit-done/workflows/list-phase-assumptions.md
+@~/.claude/get-shit-done/workflows/list-phase-assumptions.md
 </execution_context>
 
 <context>

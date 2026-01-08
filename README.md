@@ -1,6 +1,6 @@
 # Get Shit Done
 
-**A meta-prompting, context engineering and spec-driven development system for GitHub Copilot by TÂCHES.**
+**A meta-prompting, context engineering and spec-driven development system for Claude Code by TÂCHES.**
 
 ![GSD Install](assets/terminal.svg)
 
@@ -11,7 +11,7 @@
 
 *"I've done SpecKit, OpenSpec and Taskmaster — this has produced the best results for me."*
 
-*"By far the most powerful addition to my GitHub Copilot. Nothing over-engineered. Literally just gets shit done."*
+*"By far the most powerful addition to my Claude Code. Nothing over-engineered. Literally just gets shit done."*
 
 <br>
 
@@ -23,7 +23,7 @@
 
 Vibecoding has a bad reputation. You describe what you want, AI generates code, and you get inconsistent garbage that falls apart at scale.
 
-GSD fixes that. It's the context engineering layer that makes GitHub Copilot reliable. Describe your idea, let the system extract everything it needs to know, and let GitHub Copilot get to work.
+GSD fixes that. It's the context engineering layer that makes Claude Code reliable. Describe your idea, let the system extract everything it needs to know, and let Claude Code get to work.
 
 ---
 
@@ -35,15 +35,15 @@ People who want to describe what they want and have it built correctly — witho
 
 ## Why I Built This
 
-I'm a solo developer. I don't write code — GitHub Copilot does.
+I'm a solo developer. I don't write code — Claude Code does.
 
 Other spec-driven development tools exist; BMAD, Speckit... But they all seem to make things way more complicated than they need to be (sprint ceremonies, story points, stakeholder syncs, retrospectives, Jira workflows) or lack real big picture understanding of what you're building. I'm not a 50-person software company. I don't want to play enterprise theater. I'm just a creative person trying to build great things that work.
 
 So I built GSD. The complexity is in the system, not in your workflow. Behind the scenes: context engineering, XML prompt formatting, subagent orchestration, state management. What you see: a few commands that just work.
 
-The system gives the agent everything it needs to do the work _and_ verify it. I trust the workflow. It just does a good job.
+The system gives Claude everything it needs to do the work _and_ verify it. I trust the workflow. It just does a good job.
 
-That's what this is. No enterprise roleplay bullshit. Just an incredibly effective system for building cool stuff consistently using GitHub Copilot.
+That's what this is. No enterprise roleplay bullshit. Just an incredibly effective system for building cool stuff consistently using Claude Code.
 
 — TÂCHES
 
@@ -60,8 +60,8 @@ That's it. Works on Mac, Windows, and Linux.
 ### Non-interactive Install (Docker, CI, Scripts)
 
 ```bash
-npx get-shit-done-cc --global   # Install to ~/.github/
-npx get-shit-done-cc --local    # Install to ./.github/
+npx get-shit-done-cc --global   # Install to ~/.claude/
+npx get-shit-done-cc --local    # Install to ./.claude/
 ```
 
 Use `--global` (`-g`) or `--local` (`-l`) to skip the interactive prompt.
@@ -144,7 +144,7 @@ Same as greenfield, but the system knows your codebase. Questions focus on what 
 
 From here, it's the same: `/gsd:create-roadmap` → `/gsd:plan-phase` → `/gsd:execute-plan`
 
-The codebase docs load automatically during planning. The agent knows your patterns, conventions, and where to put things.
+The codebase docs load automatically during planning. Claude knows your patterns, conventions, and where to put things.
 
 ---
 
@@ -152,7 +152,7 @@ The codebase docs load automatically during planning. The agent knows your patte
 
 ### Context Engineering
 
-GitHub Copilot is incredibly powerful _if_ you give it the context it needs. Most people don't.
+Claude Code is incredibly powerful _if_ you give it the context it needs. Most people don't.
 
 GSD handles it for you:
 
@@ -165,11 +165,11 @@ GSD handles it for you:
 | `SUMMARY.md` | What happened, what changed, committed to history      |
 | `ISSUES.md`  | Deferred enhancements tracked across sessions          |
 
-Size limits based on where quality degrades. Stay under, get consistent excellence.
+Size limits based on where Claude's quality degrades. Stay under, get consistent excellence.
 
 ### XML Prompt Formatting
 
-Every plan is structured XML optimized for the agent:
+Every plan is structured XML optimized for Claude:
 
 ```xml
 <task type="auto">
@@ -189,7 +189,7 @@ Precise instructions. No guessing. Verification built in.
 
 ### Subagent Execution
 
-As the agent fills its context window, quality degrades. You've seen it: "Due to context limits, I'll be more concise now." That "concision" is code for cutting corners.
+As Claude fills its context window, quality degrades. You've seen it: "Due to context limits, I'll be more concise now." That "concision" is code for cutting corners.
 
 GSD prevents this. Each plan is maximum 3 tasks. Each plan runs in a fresh subagent — 200k tokens purely for implementation, zero accumulated garbage.
 
@@ -213,7 +213,7 @@ lmn012o feat(08-02): create registration endpoint
 **Benefits:**
 - Git bisect finds exact failing task
 - Each task independently revertable
-- Clear history for the agent in future sessions
+- Clear history for Claude in future sessions
 - Better observability in AI-automated workflow
 
 Every commit is surgical, traceable, and meaningful.
@@ -246,7 +246,7 @@ You're never locked in. The system adapts.
 | `/gsd:insert-phase [N]`           | Insert urgent work                                            |
 | `/gsd:discuss-phase [N]`          | Gather context before planning                                |
 | `/gsd:research-phase [N]`         | Deep ecosystem research for niche domains                     |
-| `/gsd:list-phase-assumptions [N]` | See what the agent thinks before you correct it             |
+| `/gsd:list-phase-assumptions [N]` | See what Claude thinks before you correct it                  |
 | `/gsd:pause-work`                 | Create handoff file when stopping mid-phase                   |
 | `/gsd:resume-work`                | Restore from last session                                     |
 | `/gsd:consider-issues`            | Review deferred issues, close resolved, identify urgent       |
@@ -260,4 +260,4 @@ MIT License. See [LICENSE](LICENSE) for details.
 
 ---
 
-**GitHub Copilot is powerful. GSD makes it reliable.**
+**Claude Code is powerful. GSD makes it reliable.**
